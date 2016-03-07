@@ -292,10 +292,18 @@ def landscape_gen(x,y,z,falloffsize,options=[0,1.0,1, 0,0,1.0,0,6,1.0,2.0,1.0,2.
     y_offset     = options[25]
 
     # origin    
-    seed_set( rseed )
-    origin_x = x_offset
-    origin_y = y_offset
-    origin_z = 0.0
+    if rseed == 0:
+        origin = 0.0,0.0,0.0
+        origin_x = x_offset
+        origin_y = y_offset
+        origin_z = 0.0
+    else:
+        # randomise origin
+        seed_set( rseed )
+        origin = random_unit_vector()
+        origin_x = (( 0.5 - origin[0] ) * 1000.0) + x_offset
+        origin_y = (( 0.5 - origin[1] ) * 1000.0) + y_offset
+        origin_z = ( 0.5 - origin[2] ) * 1000.0
 
     # adjust noise size and origin
     ncoords = ( x / nsize + origin_x, y / nsize + origin_y, z / nsize + origin_z )
