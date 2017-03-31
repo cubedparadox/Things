@@ -1,8 +1,8 @@
 Minecraft world: OlannEnmah
-Selection Location: 0, 40, -50 to 100, 255, 50
+Selection Location: -16, 40, -96 to 0, 255, -80
 Set render type: Wavefront OBJ absolute indices
 Make tree leaves solid: 1
 Individual blocks: no
 Create block faces at the borders: no
-Export for rendering: c:\mineways\0.obj
+Export for rendering: c:\mineways\35.obj
 Close
